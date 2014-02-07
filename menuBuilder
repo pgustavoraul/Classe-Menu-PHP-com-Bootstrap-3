@@ -1,0 +1,40 @@
+<?php
+
+	require_once("loadMenu.class.php");
+	
+	$sistema = new loadMenu();
+	$sistema->setLiItem('Nova Empresa', '?module=empresas&display=empresas.crud&operation=INSERT', 2);
+	$sistema->setLiItem('Exibir Empresas', '?module=empresas&display=empresas.list', 2);
+	$sistema->setDivider();
+	$sistema->setLiItem('Novo Usuário', '?module=usuarios&display=usuarios.crud&operation=INSERT', 2);
+	$sistema->setLiItem('Exibir Usuários', '?module=usuarios&display=usuarios.list', 2);
+	
+	  echo $sistema->dropDown('Sistema', 'sistema');
+	
+	// ---------------------------------------------------------------------------------------------------------
+	$titulares = new loadMenu();
+	$titulares->setLiItem('Novo Titular', '?module=titular&display=titular.crud&operation=INSERT', 1);
+	$titulares->setLiItem('Exibir Titulares', '?module=titular&display=titular.list', 1);
+	
+    echo $titulares->dropDown('Titular', 'titular');
+	
+	// ---------------------------------------------------------------------------------------------------------
+	$eventos = new loadMenu();
+	$eventos->setLiItem('Novo Evento', '?module=eventos&display=eventos.crud&operation=INSERT', 1);
+	$eventos->setLiItem('Exibir Eventos', '?module=eventos&display=eventos.list', 1);
+	$eventos->setDivider();
+	$eventos->setLiItem('Nova Inscrição', '?module=eventos&display=eventos.inscricao&operation=INSERT', 1);
+	$eventos->setLiItem('Exibir Inscrições', '?module=eventos&display=eventos.inscritos', 1);
+	
+	  echo $eventos->dropDown('Eventos', 'eventos');
+	
+	// ---------------------------------------------------------------------------------------------------------
+	$documentos = new loadMenu();
+	$documentos->setLiItem('Novo Documento', '?module=documentos&display=documentos.crud&operation=INSERT', 1);
+	$documentos->setLiItem('Exibir Documentos', '?module=documentos&display=documentos.list', 1);
+	$documentos->setDivider();
+	$documentos->setLiItem('Tipos de Documentos', '?module=documentos&display=documentos.tipo&operation=INSERT', 2);
+	
+	  echo $documentos->dropDown('Documentos', 'documentos');
+
+?>
